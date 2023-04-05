@@ -1,58 +1,48 @@
 import tkinter as tk
 import random
 
+#Lijst voor de getallen van de dobbelsteen
 dobbellijst = ["1", "2", "3", "4", "5", "6"]
-
+#window maken
 window = tk.Tk()
-window.title("DobbelGame")
+window.title("DobbelGame")  #-> De titel van de window
 
-frame = tk.Frame(master=window, borderwidth = 3)
 
-frame.grid(row=0, column = 1)
-vraag = tk.Label(
-    master=frame,
+
+vraag = tk.Label( #-> Stukje tekst ter info voor de gebruiker
     height = 7,
     width = 50,
     text="Als u wilt dobbelen, drukt u op de knop 'Dobbelen' ",
-    bg="orange",
+    background="orange",
+    foreground = "black",
     font=("Arial", 30)
 )
-vraag.pack(fill=tk.BOTH, expand=True)
-
-frame.grid(row=0, column = 2)
-antwoord = tk.Label(
-    master=frame,
+vraag.pack(fill=tk.BOTH, expand=True) #-> zorgt ervoor dat de kleuren mee "rekken" als je de game grote maakt.
+   
+antwoord = tk.Label( #-<> Indicatie van waar de gerolde getallen komen
     height = 7,
     width = 50,
     text="Hier komt het gerolde getal!",
     bg="blue",
     font=("Arial", 30)
 )
-antwoord.pack(fill=tk.BOTH, expand=True)
+antwoord.pack(fill=tk.BOTH, expand=True) #-> zorgt ervoor dat de kleuren mee "rekken" als je de game grote maakt.
 
-frame.grid(row=3, column=2)
-Dobbelen = tk.Button(
-    master=frame,
+Dobbelen = tk.Button( #-> Knop om te dobbelen
     width=20,
     height=5,
     text="Dobbelen"
 )
 Dobbelen.pack()
 
-frame.grid(row=4, column=2)
-clear = tk.Button(
-    master=frame,
+clear = tk.Button( #-> Knop om te clearen.
     width=20,
     height=5,
     text="Clear"
 )
 clear.pack()
 
-
-
-
-
-def dobbel(event):
+def dobbel(event): #-> deze functie zorgt ervoor dat er een random getal uit de list "dobbellijst" gekozen wordt en wordt laten zien
     rol = random.choice(dobbellijst)
     antwoord["text"] = "Het gerolde getal is " + rol + "."
     
@@ -60,6 +50,6 @@ def Clear(event):
     antwoord["text"] = ""
     
 
-Dobbelen.bind("<Button-1>", dobbel)
-clear.bind("<Button-1>", Clear)
-window.mainloop()
+Dobbelen.bind("<Button-1>", dobbel) #-> De knop binden aan de functie "dobbel"
+clear.bind("<Button-1>", Clear) #-> De knop binden aan de functie "Clear"
+window.mainloop() #-> zorgt dat de Tkinter werkt
