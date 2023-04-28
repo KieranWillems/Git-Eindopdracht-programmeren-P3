@@ -1,3 +1,4 @@
+getalraad = '''
 import random
 import tkinter as tk
 
@@ -51,3 +52,5 @@ class GuessingGame:
 root = tk.Tk()
 game = GuessingGame(root)
 root.mainloop()
+'''
+exec(getalraad)

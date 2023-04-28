@@ -1,3 +1,4 @@
+dobbel = '''
 import tkinter as tk #-> Tkinter importeren
 import random #-> Random importeren voor later in de code
 
@@ -62,3 +63,6 @@ if __name__ == '__main__': #-> code laten werken.
     root = tk.Tk()
     app = Dobbelen(root)
     root.mainloop()
+
+'''
+exec(dobbel)

@@ -1,3 +1,4 @@
+galg = '''
 import tkinter as tk
 from tkinter import messagebox
 import random
@@ -71,3 +72,7 @@ class Galgje:
 woordenlijst = ["hond", "kat", "olifant", "leeuw", "tijger", "giraffe", "aap", "neushoorn", "nijlpaard", "luipaard"]
 galgje = Galgje(woordenlijst)
 galgje.start()
+
+'''
+
+exec (galg)
